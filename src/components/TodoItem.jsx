@@ -16,8 +16,8 @@ const TodoItem = (props) => {
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <input type="checkbox" onClick={() => checkedTodo()}/>
             {isChecked
-            ? <h1 style={{textDecoration: 'line-through'}}>{props.todo.id}. {props.todo.title}</h1>
-            : <h1>{props.todo.id}. {props.todo.title}</h1>
+            ? <h1 style={{textDecoration: 'line-through'}}>{props.number}. {props.todo.title}</h1>
+            : <h1>{props.number}. {props.todo.title}</h1>
             }
             <button onClick={() => props.remove(props.todo)}>Remove</button>
         </div>
