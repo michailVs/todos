@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const TodoItem = (props) => {
     const [isChecked, setChecked] = useState(false)
-    if (props.todo.title.length < 1) {
+    if (props.todo.title.trim().length < 1) {
         return false
     }
     const checkedTodo = () => {
