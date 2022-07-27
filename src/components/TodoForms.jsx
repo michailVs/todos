@@ -4,7 +4,7 @@ const TodoForms = ({create}) => {
     const [todos, setTodos] = useState({title: ''})
     function createTodos(e) {
         e.preventDefault()
-        const newTodo = {...todos, id: Date.now(), checked: false}
+        const newTodo = {...todos, id: Date.now()}
         create(newTodo)
         setTodos({title: ''})
     }
