@@ -1,6 +1,6 @@
 import TodoItem from './TodoItem'
 
-const TodoList = ({todos, remove}) => {
+const TodoList = ({todos, remove, create}) => {
     if(!todos.length) {
         return (
             <h1 style={{textAlign: 'center'}}>
@@ -10,7 +10,7 @@ const TodoList = ({todos, remove}) => {
     }
     return (
         <div>
-            {todos.map((item, index) => <TodoItem todo={item} remove={remove} number={index + 1}/>)}
+            {todos.map((item, index) => <TodoItem create={create} todo={item} remove={remove} number={index + 1}/>)}
         </div>
     )
 }

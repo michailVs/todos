@@ -8,6 +8,10 @@ function App() {
     setTodos([...todos, newTodo])
     localStorage.setItem('todos', JSON.stringify([...todos, newTodo]))
   }
+  const createCheck = (newCheck) => {
+    setTodos([...todos, newCheck])
+    localStorage.setItem('todos', JSON.stringify([...todos, newCheck]))
+  }
   const removeTodo = (tod) => {
     setTodos(todos.filter(t => t.id !== tod.id))
     const getAtRemoveTodo = JSON.parse(localStorage.getItem('todos'))
@@ -24,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <TodoForms create={createTodo}/>
-      <TodoList remove={removeTodo} todos={todos}/>
+      <TodoList create={createCheck} remove={removeTodo} todos={todos}/>
     </div>
   );
 }
