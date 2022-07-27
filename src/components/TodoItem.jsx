@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-const TodoItem = ({create, ...props}) => {
-    const [isChecked, setChecked] = useState(false)
+const TodoItem = (props) => {
+    const [isChecked, setChecked] = useState(true)
     if (props.todo.title.trim().length < 1) {
         return false
     }
@@ -11,8 +11,6 @@ const TodoItem = ({create, ...props}) => {
         } else {
             setChecked(true)
         }
-        const newCheck = {...props.todo.id, checked: isChecked}
-        create(newCheck)
     }
     return (
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
